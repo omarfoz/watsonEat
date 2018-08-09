@@ -1,0 +1,12 @@
+Build/
+xcuserdata/
+Carthage/
+Pods/
+*.xcworkspace
+.DS_Store
+
+*.lock
+*.resolved
+
+VirtualAssistantforiOSSideProject-Swift/VirtualAssistantforiOSSideProject/BMSCredentials.plist
+ios_swift/VirtualAssistantforiOSSideProject/BMSCredentials.plist
