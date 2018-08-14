@@ -64,7 +64,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
     var current = Sender(id: "123456", displayName: "Ginni")
     let watson = Sender(id: "654321", displayName: "Watson")
     
-    
+    var selectnb = -1
     
     // UIButton to initiate login
     
@@ -119,6 +119,49 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         
         
     }
+    
+    //load pic
+    
+    
+    func loadFirstPhotoForPlace(placeID: String) {
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    self.loadImageForMetadata(photoMetadata: firstPhoto)
+                }
+            }
+        }
+    }
+    
+    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
+            (photo, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                let id = UUID().uuidString
+                print("atr \(photoMetadata.attributions)")
+                var pic = AssistantMessages(image: photo!, sender: self.watson, messageId: id, date: Date())
+                self.messageList.append(pic)
+               // inputBar.inputTextView.text = String()
+                self.messagesCollectionView.insertSections([self.messageList.count - 1])
+                self.messagesCollectionView.scrollToBottom()
+           
+            }
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
@@ -212,6 +255,15 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                     }
                     
                     
+                    
+                 
+                            if let placeid = re["place_id"] as? String {
+                                print("WOOOOOOOW placeid= \(placeid)")
+                                nearby.place_id = placeid
+                            }
+                        
+                    
+                  
                     
                     
                     if let geom = re["geometry"] as? [String : AnyObject] {
@@ -515,6 +567,9 @@ extension ViewController: MessagesDataSource {
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        selectnb = indexPath.section
+        messageList[indexPath.section].selectnb = indexPath.section
+        
         return messageList[indexPath.section]
     }
     
@@ -649,7 +704,37 @@ extension ViewController: MessageCellDelegate {
     func didTapMessage(in cell: MessageCollectionViewCell) {
         print("Message tapped")
         
-        if latnear != 0 && longnear != 0 {
+        let x = selectnb
+        
+        
+        for i in messageList {
+            if i.selectnb != -1 {
+                
+                if i.selectnb == x {
+            if i .latnear != 0 {
+                
+                if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+                    UIApplication.shared.openURL(NSURL(string:
+                        "comgooglemaps://?saddr=&daddr=\(i.latnear),\(i.longnear)&directionsmode=driving")! as URL)
+                    latnear = 0
+                    longnear = 0
+                    
+                }else{
+                    NSLog("Can't use comgooglemaps://");
+                }
+            }
+                }
+            }
+                
+                
+            }
+            
+            
+            
+        
+        
+        
+         if latnear != 0 && longnear != 0 {
             if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
                 UIApplication.shared.openURL(NSURL(string:
                     "comgooglemaps://?saddr=&daddr=\(latnear),\(longnear)&directionsmode=driving")! as URL)
@@ -717,7 +802,40 @@ extension ViewController: MessageInputBarDelegate {
         
     }
     
+    func setmessage2(i:String,inputBar: MessageInputBar,lat: CLLocationDegrees , long: CLLocationDegrees) {
+        
+        let attributedText = NSAttributedString(string: i, attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.blue])
+        let id = UUID().uuidString
+        var message = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: id, date: Date())
+        message.longnear = long
+        message.latnear = lat
+        self.messageList.append(message)
+        inputBar.inputTextView.text = String()
+        self.messagesCollectionView.insertSections([self.messageList.count - 1])
+        self.messagesCollectionView.scrollToBottom()
+        
+        
+    }
     
+    
+    func loadpic(inputBar: MessageInputBar,url:URL){
+        
+        
+        let id = UUID().uuidString
+        var imagefrourl = UIImageView()
+        //var url = URL(string: "https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg")
+        imagefrourl.load(url: url)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
+
+        var pic = AssistantMessages(image: imagefrourl.image!, sender: self.watson, messageId: id, date: Date())
+        self.messageList.append(pic)
+        inputBar.inputTextView.text = String()
+        self.messagesCollectionView.insertSections([self.messageList.count - 1])
+        self.messagesCollectionView.scrollToBottom()
+        }
+        
+        
+    }
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         
@@ -782,14 +900,10 @@ extension ViewController: MessageInputBarDelegate {
                     
                     
                     
-                    /*
-                     let id = UUID().uuidString
-                     var pic = AssistantMessages(image: self.logo.image!, sender: self.watson, messageId: id, date: Date())
-                     self.messageList.append(pic)
-                     inputBar.inputTextView.text = String()
-                     self.messagesCollectionView.insertSections([self.messageList.count - 1])
-                     self.messagesCollectionView.scrollToBottom()
-                     */
+                    
+                   
+                    
+                    
                     
                     
                     
@@ -813,6 +927,9 @@ extension ViewController: MessageInputBarDelegate {
                         
                         
                         
+                        
+                        
+                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
                             
                             if !self.near.isEmpty {
@@ -825,30 +942,31 @@ extension ViewController: MessageInputBarDelegate {
                                 var n = 1
                                 //self.setmessage(i: "The List is:", inputBar: inputBar)
                                 var list = "The List is :"
+                                self.setmessage(i: list, inputBar: inputBar)
+
                                 for i in self.near {
                                     
                                     var name = String(i.name)
                                     print("after \(i.rate)  ")
+
+                                    
                                     if i.rate != nil {
                                         var rate = String(i.rate)
                                         var s = "\(n)-: \(name), Rate is \(rate)."
-                                        list.append("\n \(s) \n ")
                                         
                                         
                                         
-                                        //self.setmessage(i: s, inputBar: inputBar)
+                                        self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
                                         n = n + 1
                                     } else {
                                         
                                         var s = "\(n)-: \(name)."
-                                        // self.setmessage(i: s, inputBar: inputBar)
-                                        list.append("\n \(s)")
-                                        
+                                        self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
+
                                         n = n + 1
                                     }
                                     
                                 }
-                                self.setmessage(i: list, inputBar: inputBar)
                             } else {
                                 self.setmessage(i: "no result", inputBar: inputBar)
                                 
@@ -887,6 +1005,40 @@ extension ViewController: MessageInputBarDelegate {
                                     
                                 }
                                 
+                                /*
+                                var url = URL(string: maxnb.icon)
+
+                                self.loadpic(inputBar: inputBar, url: url!)
+                            
+                                */
+                                var placesClient = GMSPlacesClient()
+                                
+                                placesClient.lookUpPlaceID(maxnb.place_id, callback: { (place, error) -> Void in
+                                    if let error = error {
+                                        print("lookup place id query error: \(error.localizedDescription)")
+                                        return
+                                    }
+                                    
+                                    guard let place = place else {
+                                        print("No place details for \(maxnb.place_id)")
+                                        return
+                                    }
+                                    
+                                    print("Place name \(place.name)")
+                                    print("Place address \(place.formattedAddress)")
+                                    
+                                    
+                                    var result:String = "Place name \(place.name)"
+                                    
+                                  
+                                    result.append("\n Place Rating \(place.rating)")
+                                    result.append("\n Place openNowStatus \(place.openNowStatus.rawValue) \n")
+                                    result.append("\n Place address \(place.formattedAddress) \n")
+
+                                })
+                                
+                                
+                                self.loadFirstPhotoForPlace(placeID: maxnb.place_id)
                                 self.latnear = maxnb.Latitude
                                 self.longnear = maxnb.longitude
                                 
@@ -927,7 +1079,8 @@ extension ViewController: MessageInputBarDelegate {
                                 
                                 //self.googlebt.setTitle(self.near[n].name, for: .normal)
                                 // self.googlebt.isHidden = false
-                                
+                                self.loadFirstPhotoForPlace(placeID: self.near[n].place_id)
+
                                 var name = String(self.near[n].name)
                                 print("after \(self.near[n].rate)  ")
                                 if self.near[n].rate != nil {

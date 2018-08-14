@@ -24,6 +24,9 @@ struct AssistantMessages: MessageType {
 	var sender: Sender
 	var sentDate: Date
 	var data: MessageData
+    var selectnb = -1
+    var latnear : CLLocationDegrees = 0
+    var longnear : CLLocationDegrees = 0
 
     init(data: MessageData, sender: Sender, messageId: String, date: Date) {
 		self.data = data

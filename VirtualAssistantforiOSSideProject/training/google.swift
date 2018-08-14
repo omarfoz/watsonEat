@@ -21,6 +21,7 @@ class NearByObject {
     var Address : String!
     var icon : String!
     var rate : Float!
+    var place_id: String!
     
     func updateInfo(NearBy : NearByObject){
         
@@ -30,6 +31,7 @@ class NearByObject {
         self.Address = NearBy.Address
         self.icon = NearBy.icon
         self.rate = NearBy.rate
+        self.place_id = NearBy.place_id
     }
     
     func setLati(Lati : CLLocationDegrees){
@@ -47,6 +49,22 @@ class NearByObject {
     
 }
 
+
+
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 
