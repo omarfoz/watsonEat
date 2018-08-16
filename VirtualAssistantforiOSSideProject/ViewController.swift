@@ -436,7 +436,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         // Configure views
        
         
-       messagesCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "food1")!)
+       messagesCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "food2")!)
         messageInputBar.sendButton.tintColor = UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
         scrollsToBottomOnKeybordBeginsEditing = true // default false
         maintainPositionOnKeyboardFrameChanged = true // default false

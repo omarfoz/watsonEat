@@ -93,44 +93,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoapp" translatesAutoresizingMaskIntoConstraints="NO" id="VSc-1D-FX9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VSc-1D-FX9">
                                 <rect key="frame" x="67" y="54" width="240" height="215"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To WatsonEats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVg-hL-yLa">
-                                <rect key="frame" x="75" y="293" width="224" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="ml2-Kq-Zqs"/>
+                                    <constraint firstAttribute="height" constant="215" id="mMt-nA-EaN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GujaratiSangamMN" family="Gujarati Sangam MN" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-Eg-qgA">
-                                <rect key="frame" x="80" y="342" width="213" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="80" y="342" width="214" height="30"/>
+                                <color key="backgroundColor" red="0.015686274509803921" green="0.074509803921568626" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2Ws-Tb-hae"/>
+                                    <constraint firstAttribute="height" constant="30" id="GuZ-QW-VIy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                 <state key="normal" title="Start chat">
-                                    <color key="titleColor" red="0.0" green="0.51658415790000001" blue="0.7742320895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="RnW-MV-e2s" kind="show" id="tmv-lo-pW0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7k-Ty-ItP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To WatsonEats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVg-hL-yLa">
+                                <rect key="frame" x="69" y="293" width="238" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="cdN-oZ-DJx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0078431372550000003" green="0.054901960780000002" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.51658415790000001" blue="0.7742320895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5DT-Eg-qgA" firstAttribute="top" secondItem="dVg-hL-yLa" secondAttribute="bottom" constant="25" id="0mp-YP-66G"/>
-                            <constraint firstItem="VSc-1D-FX9" firstAttribute="centerX" secondItem="HgS-4o-blB" secondAttribute="centerX" id="CKm-T8-T5L"/>
-                            <constraint firstItem="VSc-1D-FX9" firstAttribute="centerX" secondItem="dVg-hL-yLa" secondAttribute="centerX" id="Eee-Cv-MSb"/>
-                            <constraint firstItem="dVg-hL-yLa" firstAttribute="centerX" secondItem="5DT-Eg-qgA" secondAttribute="centerX" id="JQe-bw-mPh"/>
-                            <constraint firstItem="097-QQ-XE5" firstAttribute="bottom" secondItem="5DT-Eg-qgA" secondAttribute="bottom" constant="295" id="M0n-P7-xL1"/>
-                            <constraint firstItem="5DT-Eg-qgA" firstAttribute="leading" secondItem="097-QQ-XE5" secondAttribute="leading" constant="80" id="W7e-i9-bJC"/>
-                            <constraint firstItem="VSc-1D-FX9" firstAttribute="leading" secondItem="097-QQ-XE5" secondAttribute="leading" constant="67" id="e5a-Rw-g95"/>
-                            <constraint firstItem="VSc-1D-FX9" firstAttribute="top" secondItem="097-QQ-XE5" secondAttribute="top" constant="34" id="eQP-vp-qsn"/>
-                            <constraint firstItem="dVg-hL-yLa" firstAttribute="top" secondItem="VSc-1D-FX9" secondAttribute="bottom" constant="24" id="gap-rk-gMP"/>
+                            <constraint firstItem="VSc-1D-FX9" firstAttribute="centerX" secondItem="5DT-Eg-qgA" secondAttribute="centerX" id="5H4-Ve-aRD"/>
+                            <constraint firstItem="VSc-1D-FX9" firstAttribute="leading" secondItem="097-QQ-XE5" secondAttribute="leading" constant="67" id="CFD-eV-gJN"/>
+                            <constraint firstAttribute="trailing" secondItem="r7k-Ty-ItP" secondAttribute="trailing" id="EGg-p3-vde"/>
+                            <constraint firstItem="dVg-hL-yLa" firstAttribute="top" secondItem="VSc-1D-FX9" secondAttribute="bottom" constant="24" id="L0v-Hq-VZB"/>
+                            <constraint firstItem="VSc-1D-FX9" firstAttribute="top" secondItem="r7k-Ty-ItP" secondAttribute="bottom" constant="33" id="Tek-NK-zDr"/>
+                            <constraint firstItem="r7k-Ty-ItP" firstAttribute="centerX" secondItem="VSc-1D-FX9" secondAttribute="centerX" id="dGI-ll-aoi"/>
+                            <constraint firstItem="5DT-Eg-qgA" firstAttribute="top" secondItem="dVg-hL-yLa" secondAttribute="bottom" constant="25" id="du4-SC-mpi"/>
+                            <constraint firstItem="r7k-Ty-ItP" firstAttribute="leading" secondItem="HgS-4o-blB" secondAttribute="leading" id="fka-H5-imZ"/>
+                            <constraint firstItem="VSc-1D-FX9" firstAttribute="trailing" secondItem="dVg-hL-yLa" secondAttribute="trailing" id="i6R-WF-Q5u"/>
+                            <constraint firstItem="5DT-Eg-qgA" firstAttribute="leading" secondItem="097-QQ-XE5" secondAttribute="leading" constant="80" id="kcA-Aj-ltM"/>
+                            <constraint firstItem="r7k-Ty-ItP" firstAttribute="top" secondItem="HgS-4o-blB" secondAttribute="top" id="mzn-VZ-cHe"/>
+                            <constraint firstItem="097-QQ-XE5" firstAttribute="bottom" secondItem="5DT-Eg-qgA" secondAttribute="bottom" constant="295" id="sGY-91-qAo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="097-QQ-XE5"/>
                     </view>
@@ -142,7 +154,7 @@
     </scenes>
     <resources>
         <image name="logo.gif" width="800" height="715"/>
-        <image name="logoapp" width="341" height="341"/>
+        <image name="logo2" width="1024" height="1024"/>
     </resources>
     <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
