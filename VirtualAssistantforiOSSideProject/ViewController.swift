@@ -88,8 +88,6 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         logo.image = UIImage.gif(name: "logo")
         
         
-        
-        
         // Instantiate Assistant Instance
         self.instantiateAssistant()
         
@@ -436,6 +434,9 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         messageInputBar.delegate = self
         
         // Configure views
+       
+        
+       messagesCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "food1")!)
         messageInputBar.sendButton.tintColor = UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
         scrollsToBottomOnKeybordBeginsEditing = true // default false
         maintainPositionOnKeyboardFrameChanged = true // default false
@@ -703,7 +704,7 @@ extension ViewController: MessageCellDelegate {
     
     func didTapMessage(in cell: MessageCollectionViewCell) {
         print("Message tapped")
-        
+        /*
         let x = selectnb
         
         
@@ -745,7 +746,7 @@ extension ViewController: MessageCellDelegate {
                 NSLog("Can't use comgooglemaps://");
             }
         }
-        
+    */
     }
     
     func didTapTopLabel(in cell: MessageCollectionViewCell) {
@@ -778,7 +779,20 @@ extension ViewController: MessageLabelDelegate {
     
     func didSelectURL(_ url: URL) {
         print("URL Selected: \(url)")
+        
+        if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+            UIApplication.shared.openURL(url)
+               
+            
+        }else{
+            NSLog("Can't use comgooglemaps://");
+        }
     }
+        
+        
+        
+    
+    
     
 }
 
@@ -900,9 +914,7 @@ extension ViewController: MessageInputBarDelegate {
                     
                     
                     
-                    
                    
-                    
                     
                     
                     
@@ -949,18 +961,23 @@ extension ViewController: MessageInputBarDelegate {
                                     var name = String(i.name)
                                     print("after \(i.rate)  ")
 
-                                    
+                                    var lan = String(i.Latitude)
+                                    var long = String(i.longitude)
                                     if i.rate != nil {
                                         var rate = String(i.rate)
-                                        var s = "\(n)-: \(name), Rate is \(rate)."
+                                       
+                                        var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+
+                                        var s = "\(n)-: \(name), Rate is \(rate). \n and Link to google map : \(url)"
                                         
                                         
                                         
                                         self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
                                         n = n + 1
                                     } else {
-                                        
-                                        var s = "\(n)-: \(name)."
+                                        var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+
+                                        var s = "\(n)-: \(name).  \n and Link to google map : \(url)"
                                         self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
 
                                         n = n + 1
@@ -1044,17 +1061,23 @@ extension ViewController: MessageInputBarDelegate {
                                 
                                 //self.googlebt.setTitle(self.near[n].name, for: .normal)
                                 // self.googlebt.isHidden = false
-                                
+
                                 var name = String(maxnb.name)
                                 print("after \(maxnb.rate)  ")
+                                var lan = String(maxnb.Latitude)
+                                var long = String(maxnb.longitude)
+
                                 if maxnb.rate != nil {
                                     var rate = String(maxnb.rate)
-                                    var s = "the higest riting: \(name), Rate is \(rate)."
+                                    var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+
+                                    var s = "the higest riting: \(name), Rate is \(rate). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
                                     
                                 } else {
-                                    
-                                    var s = "the higest riting: \(name)."
+                                    var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+
+                                    var s = "the higest riting: \(name). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
                                 }
                                 
@@ -1083,14 +1106,25 @@ extension ViewController: MessageInputBarDelegate {
 
                                 var name = String(self.near[n].name)
                                 print("after \(self.near[n].rate)  ")
+                                
+                                var lan = String(self.near[n].Latitude)
+                                var long = String(self.near[n].longitude)
+
                                 if self.near[n].rate != nil {
                                     var rate = String(self.near[n].rate)
-                                    var s = "I suggest to you: \(name), Rate is \(rate)."
+                                    
+                                    var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+                                    
+                              
+                                    
+                                    
+                                    var s = "I suggest to you: \(name), Rate is \(rate). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
                                     
                                 } else {
-                                    
-                                    var s = "I suggest to you: \(name)."
+                                    var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+
+                                    var s = "I suggest to you: \(name). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
                                 }
                                 

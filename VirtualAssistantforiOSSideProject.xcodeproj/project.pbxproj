@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07227D9321259F9100690686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07227D9221259F9100690686 /* Assets.xcassets */; };
 		07C80ACF2110B70400FC5125 /* google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C80ACE2110B70400FC5125 /* google.swift */; };
 		07C80AD32119C9CB00FC5125 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C80AD22119C9CB00FC5125 /* First.swift */; };
 		07C80AD52119D53500FC5125 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C80AD42119D53500FC5125 /* UIImage+Gif.swift */; };
@@ -16,7 +17,6 @@
 		555C91AC1D0F0731003E84E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91AB1D0F0731003E84E3 /* AppDelegate.swift */; };
 		555C91AE1D0F0731003E84E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91AD1D0F0731003E84E3 /* ViewController.swift */; };
 		555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555C91AF1D0F0731003E84E3 /* Main.storyboard */; };
-		555C91B31D0F0731003E84E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555C91B21D0F0731003E84E3 /* Assets.xcassets */; };
 		555C91C11D0F0731003E84E3 /* VirtualAssistantforiOSSideProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91C01D0F0731003E84E3 /* VirtualAssistantforiOSSideProjectTests.swift */; };
 		555C91CC1D0F0731003E84E3 /* VirtualAssistantforiOSSideProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555C91CB1D0F0731003E84E3 /* VirtualAssistantforiOSSideProjectUITests.swift */; };
 		55EE197E81F94F406AEA62A6 /* Pods_VirtualAssistantforiOSSideProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E25BCDA6C035CF3271888F /* Pods_VirtualAssistantforiOSSideProject.framework */; };
@@ -62,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		00CE8CE0B5524C5DAF90F20E /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BMSCredentials.plist; sourceTree = "<group>"; };
+		07227D9221259F9100690686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07C80ACE2110B70400FC5125 /* google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = google.swift; sourceTree = "<group>"; };
 		07C80AD22119C9CB00FC5125 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
 		07C80AD42119D53500FC5125 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = SOURCE_ROOT; };
@@ -75,7 +76,6 @@
 		555C91AB1D0F0731003E84E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		555C91AD1D0F0731003E84E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		555C91B01D0F0731003E84E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		555C91B21D0F0731003E84E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		555C91B71D0F0731003E84E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		555C91BC1D0F0731003E84E3 /* VirtualAssistantforiOSSideProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualAssistantforiOSSideProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		555C91C01D0F0731003E84E3 /* VirtualAssistantforiOSSideProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualAssistantforiOSSideProjectTests.swift; sourceTree = "<group>"; };
@@ -188,8 +188,8 @@
 				555C91AD1D0F0731003E84E3 /* ViewController.swift */,
 				587777151FF8759400387021 /* AssistantMessages.swift */,
 				555C91AF1D0F0731003E84E3 /* Main.storyboard */,
-				555C91B21D0F0731003E84E3 /* Assets.xcassets */,
 				E3D862A0202B8ECC00B34DE6 /* AssistantError.swift */,
+				07227D9221259F9100690686 /* Assets.xcassets */,
 			);
 			path = VirtualAssistantforiOSSideProject;
 			sourceTree = "<group>";
@@ -355,9 +355,9 @@
 			files = (
 				A8578E5241104AFBA067AF4E /* BMSCredentials.plist in Resources */,
 				07C80ADD2119DD6D00FC5125 /* logo.gif in Resources */,
-				555C91B31D0F0731003E84E3 /* Assets.xcassets in Resources */,
 				5803AD91205CBE3C00CD3162 /* Default-568h@2x.png in Resources */,
 				555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */,
+				07227D9321259F9100690686 /* Assets.xcassets in Resources */,
 				5877770D1FF8402B00387021 /* car_training.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
