@@ -343,7 +343,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
            
             DispatchQueue.main.async {
                 
-              
+            //joiu
                 
                 var list = "The List is :"
                 self.setmessage(i: list, inputBar: inputBar)
