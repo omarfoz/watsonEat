@@ -76,16 +76,12 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
     }
     
     
-    @IBOutlet weak var logo: UIImageView!
     
-    
-    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        logo.image = UIImage.gif(name: "logo")
         
         
         // Instantiate Assistant Instance
@@ -303,6 +299,186 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
     }
     
     
+    
+    
+    
+    func performGoogleSearch2(searchfor: String ,lat: CLLocationDegrees, lon: CLLocationDegrees,inputBar: MessageInputBar){
+        
+        var RadiusArea : Int = 1000
+        var rate:Float = 0.0
+        
+        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=\(RadiusArea)&keyword=\(searchfor)&key=AIzaSyCreKqjOjlnqwJL1MuxvkgQTov_0cL_VdM")!
+        
+        let key = URLQueryItem(name: "key", value: "AIzaSyCreKqjOjlnqwJL1MuxvkgQTov_0cL_VdM") // use your key
+        
+        let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
+            guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+                print(String(describing: response))
+                print(String(describing: error))
+                return
+            }
+            
+            guard let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                print("not JSON format expected")
+                print(String(data: data, encoding: .utf8) ?? "Not string?!?")
+                return
+            }
+            
+            guard let results = json["results"] as? [[String: Any]],
+                
+                
+                let status = json["status"] as? String,
+                status == "OK" else {
+                    print("nothing here !!!!")
+                    DispatchQueue.main.async {
+                        var list = "no result"
+                        self.setmessage(i: list, inputBar: inputBar)
+                    }
+                    print(String(describing: json))
+                    return
+            }
+            
+            
+            
+           
+            DispatchQueue.main.async {
+                
+              
+                
+                var list = "The List is :"
+                self.setmessage(i: list, inputBar: inputBar)
+                
+                
+                var n = 1
+                for re in results{
+                    var nearby = NearByObject()
+                    
+                    
+                    /*
+                     if let rates = re["rating"] as? String {
+                     
+                     print("rate \(rates)")
+                     
+                     rate = Double(rates)!
+                     
+                     }
+                     */
+                    
+                    
+                    
+                    
+                    if let ratess = re["rating"] as? Float64 {
+                        
+                        print("rate \(ratess)")
+                        
+                        rate =  Float(ratess)
+                        
+                        nearby.rate = rate
+                    }
+                    
+                    
+                    
+                    
+                    if let placeid = re["place_id"] as? String {
+                        print("WOOOOOOOW placeid= \(placeid)")
+                        nearby.place_id = placeid
+                    }
+                    
+                    
+                    
+                    
+                    
+                    if let geom = re["geometry"] as? [String : AnyObject] {
+                        if let locat = geom["location"] as? [String : AnyObject] {
+                            if let lat = locat["lat"] as? CLLocationDegrees {
+                                print("WOOOOOOOW lat= \(lat)")
+                                nearby.Latitude = lat
+                            }
+                            if let lng = locat["lng"] as? CLLocationDegrees {
+                                print("WOOOOOOOW lan= \(lng)")
+                                nearby.longitude = lng
+                            }
+                        }
+                    }
+                    if let name = re["name"] as? String {
+                        print("WOOOOOOOW name= \(name)")
+                        nearby.name = name
+                    }
+                    
+                    
+                    
+                    if let address = re["vicinity"] as? String{
+                        print("WOOOOOOOW address= \(address)")
+                        nearby.Address = address
+                        
+                    }
+                    
+                    if let icon = re["icon"] as? String{
+                        print("WOOOOOOOW icon= \(icon)")
+                        nearby.icon = icon
+                        var disp = "name: \(nearby.name) and rate is : \(nearby.rate) "
+                        
+                        
+                       
+                        
+                        
+                        
+                     
+
+                      var i = nearby
+                            
+                            var name = String(i.name)
+                            print("after \(i.rate)  ")
+                            
+                            var lan = String(i.Latitude)
+                            var long = String(i.longitude)
+                            if i.rate != nil {
+                                var rate = String(i.rate)
+                                
+                                var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+                                
+                                var s = "\(n)-: \(name), Rate is \(rate). \n and Link to google map : \(url)"
+                                
+                                
+                                
+                                self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
+                                n = n + 1
+                            } else {
+                                var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+                                
+                                var s = "\(n)-: \(name).  \n and Link to google map : \(url)"
+                                self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
+                                
+                                n = n + 1
+                            }
+                        
+                       
+                        
+                    }
+                   
+                
+                    
+                }
+                
+                
+                
+            }
+            
+        }
+        task.resume()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: - Setup Methods
     
     // Method to instantiate assistant service
@@ -436,7 +612,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         // Configure views
        
         
-       messagesCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "food2")!)
+      // messagesCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "chatwall2")!)
         messageInputBar.sendButton.tintColor = UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
         scrollsToBottomOnKeybordBeginsEditing = true // default false
         maintainPositionOnKeyboardFrameChanged = true // default false
@@ -928,20 +1104,23 @@ extension ViewController: MessageInputBarDelegate {
                             }
                             
                         }
-                        
+                        /*
                         self.near  = [NearByObject]()
                         
                         if nb != -1 {
                             self.performGoogleSearch(searchfor: arrString[nb],lat: self.lat, lon: self.long)
                             
                         }
+                        */
+                       
+                        
+                        self.performGoogleSearch2(searchfor: arrString[nb],lat: self.lat, lon: self.long,inputBar: inputBar)
+
                         
                         
                         
                         
-                        
-                        
-                        
+                        /*
                         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
                             
                             if !self.near.isEmpty {
@@ -956,6 +1135,10 @@ extension ViewController: MessageInputBarDelegate {
                                 var list = "The List is :"
                                 self.setmessage(i: list, inputBar: inputBar)
 
+                                
+                                
+                                
+                                
                                 for i in self.near {
                                     
                                     var name = String(i.name)
@@ -989,7 +1172,10 @@ extension ViewController: MessageInputBarDelegate {
                                 
                             }
                             
-                        }} else if arrStringRates.contains(watsonMessage) {
+                        }
+ 
+ */
+ } else if arrStringRates.contains(watsonMessage) {
                         var nb = -1
                         for i in 0..<arrStringRates.count {
                             if arrStringRates[i] == watsonMessage {

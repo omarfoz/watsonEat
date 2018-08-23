@@ -9,12 +9,18 @@
 import UIKit
 
 class First: UIViewController {
-
+    @IBOutlet weak var gifimageview: UIImageView!
+    
+    @IBOutlet weak var load: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 self.view.backgroundColor = UIColor(patternImage: UIImage(named: "food1")!)
        
+       gifimageview.image = UIImage.gif(name: "logo")
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+            self.load.isHidden = true
+        }
         
         // Do any additional setup after loading the view.
     }
