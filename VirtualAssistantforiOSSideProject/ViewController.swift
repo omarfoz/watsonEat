@@ -656,17 +656,31 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                     
                     // Create a Message for adding to the Message View
                     let message = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: uniqueID, date: date)
-                    if message.messageId == "H" {
+                    if watsonMessage == "Hello I'm WatsonEats Bot! I'm here to help you find (restaurant/coffee) nearby. There are three options available, Random(restaurant/coffee), Best(restaurant/coffee) and List(restaurant/coffee). Say help for more information." {
                         
-                        let attributedText = NSAttributedString(string: "holaaaaa",
+                        var attributedText = NSAttributedString(string: "Hello I'm WatsonEats Bot! I'm here to help you find (restaurant/coffee) nearby.",
                                                                 attributes: [.font: UIFont.systemFont(ofSize: 14),
                                                                              .foregroundColor: UIColor.blue])
                         
                         
-                        let message2 = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: uniqueID, date: date)
+                        var message2 = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: uniqueID, date: date)
                         self.messageList.insert(message2, at: 0)
                         self.messagesCollectionView.reloadData()
                         self.messagesCollectionView.scrollToBottom()
+                        
+                        
+                        
+                        attributedText = NSAttributedString(string: "There are three options available, Random(restaurant/coffee), Best(restaurant/coffee) and List(restaurant/coffee). Say help for more information.",
+                                                                attributes: [.font: UIFont.systemFont(ofSize: 14),
+                                                                             .foregroundColor: UIColor.blue])
+                        
+                        
+                         message2 = AssistantMessages(attributedText: attributedText, sender: self.watson, messageId: uniqueID, date: date)
+                        self.messageList.insert(message2, at: 1)
+                        self.messagesCollectionView.reloadData()
+                        self.messagesCollectionView.scrollToBottom()
+                        
+                        
                         self.stopAnimating()
                     } else{
                         
