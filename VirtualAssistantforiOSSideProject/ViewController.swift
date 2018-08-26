@@ -130,6 +130,26 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         }
     }
     
+    
+    func loadFirstPhotoForPlace(near: NearByObject,inputBar: MessageInputBar) {
+        GMSPlacesClient.shared().lookUpPhotos(forPlaceID: near.place_id) { (photos, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    
+                   
+                    
+                    self.loadImageForMetadata(photoMetadata: firstPhoto, near: near)
+                    
+
+                }
+            }
+        }
+    }
+    
+    
     func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
         GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
             (photo, error) -> Void in
@@ -152,6 +172,78 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
     
     
     
+    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata,near: NearByObject) {
+        GMSPlacesClient.shared().loadPlacePhoto(photoMetadata, callback: {
+            (photo, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.localizedDescription)")
+            } else {
+                
+                var i = near
+                
+                var name = String(i.name)
+                print("after \(i.rate)  ")
+                
+                var lan = String(i.Latitude)
+                var long = String(i.longitude)
+                if i.rate != nil {
+                    var rate = String(i.rate)
+                    
+                    var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+                    
+                    var s = "-: \(name), Rate is \(rate). \n and Link to google map : \(url)"
+                    
+                    // self.loadFirstPhotoForPlace(placeID: i.place_id)
+                    
+                      self.setmessage2(i: s, inputBar: self.messageInputBar,lat: i.Latitude,long: i.longitude)
+                    let id = UUID().uuidString
+                    print("atr \(photoMetadata.attributions)")
+                    var pic = AssistantMessages(image: photo!, sender: self.watson, messageId: id, date: Date())
+                    self.messageList.append(pic)
+                    // inputBar.inputTextView.text = String()
+                    self.messagesCollectionView.insertSections([self.messageList.count - 1])
+                    self.messagesCollectionView.scrollToBottom()
+                    
+                  
+                    
+                    
+                } else {
+                    var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
+                    
+                    var s = "-: \(name).  \n and Link to google map : \(url)"
+                    //  self.loadFirstPhotoForPlace(placeID: i.place_id)
+                    
+                    self.setmessage2(i: s, inputBar: self.messageInputBar,lat: i.Latitude,long: i.longitude)
+
+                    let id = UUID().uuidString
+                    print("atr \(photoMetadata.attributions)")
+                    var pic = AssistantMessages(image: photo!, sender: self.watson, messageId: id, date: Date())
+                    self.messageList.append(pic)
+                    // inputBar.inputTextView.text = String()
+                    self.messagesCollectionView.insertSections([self.messageList.count - 1])
+                    self.messagesCollectionView.scrollToBottom()
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                }
+
+                
+                
+                
+             
+                
+                
+                
+                
+                
+            }
+        })
+    }
     
     
     
@@ -333,6 +425,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                     DispatchQueue.main.async {
                         var list = "no result"
                         self.setmessage(i: list, inputBar: inputBar)
+                         self.stopAnimating()
                     }
                     print(String(describing: json))
                     return
@@ -347,7 +440,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                 
                 var list = "The List is :"
                 self.setmessage(i: list, inputBar: inputBar)
-                
+               
                 
                 var n = 1
                 for re in results{
@@ -418,13 +511,9 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                         nearby.icon = icon
                         var disp = "name: \(nearby.name) and rate is : \(nearby.rate) "
                         
-                        
-                       
-                        
-                        
-                        
+                        self.loadFirstPhotoForPlace(near: nearby, inputBar: self.messageInputBar)
                      
-
+/*
                       var i = nearby
                             
                             var name = String(i.name)
@@ -439,7 +528,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                                 
                                 var s = "\(n)-: \(name), Rate is \(rate). \n and Link to google map : \(url)"
                                 
-                                
+                                  self.loadFirstPhotoForPlace(placeID: i.place_id)
                                 
                                 self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
                                 n = n + 1
@@ -447,10 +536,14 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                                 var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
                                 
                                 var s = "\(n)-: \(name).  \n and Link to google map : \(url)"
+                                self.loadFirstPhotoForPlace(placeID: i.place_id)
+
                                 self.setmessage2(i: s, inputBar: inputBar,lat: i.Latitude,long: i.longitude)
                                 
                                 n = n + 1
                             }
+                        */
+                        
                         
                        
                         
@@ -460,7 +553,7 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
                     
                 }
                 
-                
+                 self.stopAnimating()
                 
             }
             
@@ -1127,9 +1220,10 @@ extension ViewController: MessageInputBarDelegate {
                         }
                         */
                        
-                        
-                        self.performGoogleSearch2(searchfor: arrString[nb],lat: self.lat, lon: self.long,inputBar: inputBar)
+                         self.startAnimating()
 
+                        self.performGoogleSearch2(searchfor: arrString[nb],lat: self.lat, lon: self.long,inputBar: inputBar)
+                      
                         
                         
                         
@@ -1190,6 +1284,8 @@ extension ViewController: MessageInputBarDelegate {
  
  */
  } else if arrStringRates.contains(watsonMessage) {
+                        self.startAnimating()
+
                         var nb = -1
                         for i in 0..<arrStringRates.count {
                             if arrStringRates[i] == watsonMessage {
@@ -1273,21 +1369,27 @@ extension ViewController: MessageInputBarDelegate {
 
                                     var s = "the higest riting: \(name), Rate is \(rate). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
+                                        self.stopAnimating()
                                     
                                 } else {
                                     var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
 
                                     var s = "the higest riting: \(name). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
+                                    self.stopAnimating()
+
                                 }
                                 
                             } else {
+                                self.stopAnimating()
+
                                 self.setmessage(i: "no result", inputBar: inputBar)
+                                
                                 
                             }
                             
                         }}else if arrString.contains(watsonMessage) {
-                        
+                        self.startAnimating()
                         self.near  = [NearByObject]()
                         self.performGoogleSearch(searchfor: watsonMessage,lat: self.lat, lon: self.long)
                         
@@ -1320,16 +1422,21 @@ extension ViewController: MessageInputBarDelegate {
                                     
                                     var s = "I suggest to you: \(name), Rate is \(rate). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
-                                    
+                                    self.stopAnimating()
+
                                 } else {
                                     var url = NSURL(string:"comgooglemaps://?saddr=&daddr=\(lan),\(long)&directionsmode=driving")! as URL
 
                                     var s = "I suggest to you: \(name). \n and Link to google map : \(url)"
                                     self.setmessage(i: s, inputBar: inputBar)
+                                    self.stopAnimating()
+
                                 }
                                 
                             } else {
                                 self.setmessage(i: "no result", inputBar: inputBar)
+                                self.stopAnimating()
+
                                 
                             }
                             
