@@ -18,7 +18,7 @@ self.view.backgroundColor = UIColor(patternImage: UIImage(named: "food1")!)
        
        gifimageview.image = UIImage.gif(name: "logo")
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
             self.load.isHidden = true
         }
         
