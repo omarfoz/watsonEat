@@ -1,5 +1,7 @@
 ## WastonEats
 
+[![Watch the video](https://raw.githubusercontent.com/omarfoz/watsonEat/master/watsoneatsss.png)](https://youtu.be/gxFah_HV-l4)
+
 In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used to be a Chabot. The Google Places API will use to locate the nearby restaurant and coffee.
 
 
@@ -125,7 +127,8 @@ Clone this repo called "VirtualAssistantforiOSSideProject"
 
 https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
 * you only need one file from the starterkit called "BMSCredentials.plist"
-then move this file to the "VirtualAssistantforiOSSideProject" folder inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
+then move this file inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
+
 * change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
 ## Launch Watson Assistint Tool 
