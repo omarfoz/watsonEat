@@ -1,5 +1,5 @@
 ## WastonEats
-
+### To watch the demo click on the image
 [![Watch the video](https://raw.githubusercontent.com/omarfoz/watsonEat/master/watsoneatsss.png)](https://youtu.be/gxFah_HV-l4)
 
 In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used to be a Chabot. The Google Places API will use to locate the nearby restaurant and coffee.
