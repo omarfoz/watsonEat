@@ -132,7 +132,7 @@ then move this file inside the project folder watsonEats/VirtualAssistantforiOSS
 * change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
 ## Launch Watson Assistint Tool 
-import json file "WatsonEats.json" to you workspaces
+import json file "WatsonEats.json" to your workspaces , you can find the json file in the project WatsonEats/
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
 
