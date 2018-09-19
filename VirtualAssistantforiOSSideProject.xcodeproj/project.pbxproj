@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07227D97212C961A00690686 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 07227D96212C961A00690686 /* logo.gif */; };
 		07227D99212C963F00690686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07227D98212C963F00690686 /* Assets.xcassets */; };
+		0742582C21513050001BB6EB /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0742582B21513050001BB6EB /* Keys.swift */; };
 		07C80ACF2110B70400FC5125 /* google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C80ACE2110B70400FC5125 /* google.swift */; };
 		07C80AD32119C9CB00FC5125 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C80AD22119C9CB00FC5125 /* First.swift */; };
 		07C80AD52119D53500FC5125 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C80AD42119D53500FC5125 /* UIImage+Gif.swift */; };
@@ -25,7 +26,6 @@
 		580A5F8D205D970C001C5A82 /* AssistantV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 580A5F8B205D970C001C5A82 /* AssistantV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5877770D1FF8402B00387021 /* car_training.json in Resources */ = {isa = PBXBuildFile; fileRef = 5877770B1FF8402B00387021 /* car_training.json */; };
 		587777161FF8759500387021 /* AssistantMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587777151FF8759400387021 /* AssistantMessages.swift */; };
-		A8578E5241104AFBA067AF4E /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00CE8CE0B5524C5DAF90F20E /* BMSCredentials.plist */; };
 		E3D862A1202B8ECC00B34DE6 /* AssistantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D862A0202B8ECC00B34DE6 /* AssistantError.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,9 +61,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00CE8CE0B5524C5DAF90F20E /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BMSCredentials.plist; sourceTree = "<group>"; };
 		07227D96212C961A00690686 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 		07227D98212C963F00690686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0742582B21513050001BB6EB /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		07C80ACE2110B70400FC5125 /* google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = google.swift; sourceTree = "<group>"; };
 		07C80AD22119C9CB00FC5125 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
 		07C80AD42119D53500FC5125 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = SOURCE_ROOT; };
@@ -179,9 +179,9 @@
 		555C91AA1D0F0731003E84E3 /* VirtualAssistantforiOSSideProject */ = {
 			isa = PBXGroup;
 			children = (
-				00CE8CE0B5524C5DAF90F20E /* BMSCredentials.plist */,
 				5877770A1FF8402B00387021 /* training */,
 				555C91AB1D0F0731003E84E3 /* AppDelegate.swift */,
+				0742582B21513050001BB6EB /* Keys.swift */,
 				07C80AD42119D53500FC5125 /* UIImage+Gif.swift */,
 				555C91B71D0F0731003E84E3 /* Info.plist */,
 				555C91AD1D0F0731003E84E3 /* ViewController.swift */,
@@ -314,8 +314,8 @@
 				TargetAttributes = {
 					555C91A71D0F0731003E84E3 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = NA4JNG3MPH;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					555C91BB1D0F0731003E84E3 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -353,7 +353,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8578E5241104AFBA067AF4E /* BMSCredentials.plist in Resources */,
 				07227D97212C961A00690686 /* logo.gif in Resources */,
 				5803AD91205CBE3C00CD3162 /* Default-568h@2x.png in Resources */,
 				555C91B11D0F0731003E84E3 /* Main.storyboard in Resources */,
@@ -487,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C80ACF2110B70400FC5125 /* google.swift in Sources */,
+				0742582C21513050001BB6EB /* Keys.swift in Sources */,
 				E3D862A1202B8ECC00B34DE6 /* AssistantError.swift in Sources */,
 				07C80AD52119D53500FC5125 /* UIImage+Gif.swift in Sources */,
 				07C80AD32119C9CB00FC5125 /* First.swift in Sources */,
@@ -648,7 +648,8 @@
 			baseConfigurationReference = C5F2362AFA834C538C87F504 /* Pods-VirtualAssistantforiOSSideProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NA4JNG3MPH;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -657,8 +658,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/VirtualAssistantforiOSSideProject/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.starterwatsonassistant1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.watsoneat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -668,7 +670,8 @@
 			baseConfigurationReference = 40C440CD45E797A604FD27B8 /* Pods-VirtualAssistantforiOSSideProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NA4JNG3MPH;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -677,8 +680,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/VirtualAssistantforiOSSideProject/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.starterwatsonassistant1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.watsoneat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

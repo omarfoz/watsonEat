@@ -59,7 +59,6 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
     
     // Watson Assistant Workspace
     var workspaceID: String?
-    
     // Users
     var current = Sender(id: "123456", displayName: "Ginni")
     let watson = Sender(id: "654321", displayName: "Watson")
@@ -277,9 +276,9 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         var RadiusArea : Int = 1000
         var rate:Float = 0.0
         
-        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=\(RadiusArea)&keyword=\(searchfor)&key=AIzaSyCreKqjOjlnqwJL1MuxvkgQTov_0cL_VdM")!
+        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=\(RadiusArea)&keyword=\(searchfor)&key=\(keys.googleSearchAPIKey)")!
         
-        let key = URLQueryItem(name: "key", value: "AIzaSyCreKqjOjlnqwJL1MuxvkgQTov_0cL_VdM") // use your key
+        let key = URLQueryItem(name: "key", value: "\(keys.googleSearchAPIKey)") // use your key
         
         let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
             guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
@@ -399,9 +398,9 @@ class ViewController: MessagesViewController, NVActivityIndicatorViewable , CLLo
         var RadiusArea : Int = 1000
         var rate:Float = 0.0
         
-        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=\(RadiusArea)&keyword=\(searchfor)&key=AIzaSyCreKqjOjlnqwJL1MuxvkgQTov_0cL_VdM")!
+        var components = URLComponents(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(lon)&radius=\(RadiusArea)&keyword=\(searchfor)&key=\(keys.googleSearchAPIKey)")!
         
-        let key = URLQueryItem(name: "key", value: "AIzaSyCreKqjOjlnqwJL1MuxvkgQTov_0cL_VdM") // use your key
+        let key = URLQueryItem(name: "key", value: "\(keys.googleSearchAPIKey)") // use your key
         
         let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
             guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {

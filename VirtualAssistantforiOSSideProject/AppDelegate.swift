@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myBMSClient.initialize(bluemixRegion: BMSClient.Region.unitedKingdom)
         myBMSClient.requestTimeout = 10.0 // seconds
 
-        
-        GMSPlacesClient.provideAPIKey("AIzaSyD4RTRUw4bnhyHOKi5fK2rPr9iIe1On33I")
+        print("the keys \(keys.googleAPIKey)")
+        GMSPlacesClient.provideAPIKey(keys.googleAPIKey)
 
         
 

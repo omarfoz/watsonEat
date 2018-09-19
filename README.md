@@ -1,9 +1,29 @@
-## Virtual Assistant for iOS with Watson
+## WastonEats
+
+In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used to be a Chabot. The Google Places API will use to locate the nearby restaurant and coffee.
+
+
+When the reader has completed this experience, they will understand how to:
+*	Create a Chabot mobile app that can use to find the nearby restaurant and coffee.
+*	Use Google Place API to locate the nearby restaurant and coffee.
+
+
+
+
+## Flow
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/Picture1.png)
+* 1- The user opens the iOS application then click start chat
+* 2- User type “Restaurant or Coffee” via the mobile app.
+* 3- Watson Assistant identified the word then active the action method to find nearby.
+* 4- Google Places API search nearby restaurant or coffee.
+* 5- Return the nearby result.
+
 
 [![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
 [![Platform](https://img.shields.io/badge/platform-ios_swift-lightgrey.svg?style=flat)](https://developer.apple.com/swift/)
 
 ### Table of Contents
+
 * [Summary](#summary)
 * [Requirements](#requirements)
 * [Configuration](#configuration)
@@ -11,7 +31,7 @@
 * [License](#license)
 
 ### Summary
-This IBM Cloud Starter Kit will showcase the Watson Assistant service and give you integration points for each of the IBM Cloud Mobile services.
+Create a Mobile App that helps you to find the nearest restaurant and coffee with Watson Assistant and Google Places API:
 
 ### Requirements
 * iOS 9.0+
@@ -96,12 +116,35 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 
 > [View configuration](#configuration)
 
+
 ### Run
+## Clone this repo 
+Clone this repo called "VirtualAssistantforiOSSideProject"
+## Create your own Starterkit from IBM Cloud on here 
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
+
+https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
+* you only need one file from the starterkit called "BMSCredentials.plist"
+then move this file to the "VirtualAssistantforiOSSideProject" folder inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
+* change the Bundle Identifier to anything 
+in the xcode in genral tap you can change it.
+## Launch Watson Assistint Tool 
+import json file "WatsonEats.json" to you workspaces
+
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
+
+## set up Google API 
+You onle need the API key For google place.
+* You can get google place and api key from here https://developers.google.com/places/ios-sdk/start
+by creating project in google and follow the instructions 
+* Plase the api key on Xcode "Keys.swift"  
+
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/keys.gif)
+
+## Finally you can run the app
 You can now run the application on a simulator or physical device
 
 
-The Watson Assistant service allows you to add a natural language interface to your application to automate interactions with your end users. This application shows how to incorporate Watson Assistant into an iOS application.
-
 ### License
 This package contains code licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the License in the LICENSE file within this package.
-# sideproject-watsonEat
+# WatsonEat
