@@ -120,7 +120,7 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 ### Run
 ## Clone this repo 
 Clone this repo called "VirtualAssistantforiOSSideProject"
-## create your own starterkit from IBM Coud on here 
+## create your own starterkit from IBM Cloud on here 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
 
 https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
@@ -128,14 +128,18 @@ https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assi
 then move this file to the "VirtualAssistantforiOSSideProject" folder inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
 * change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
-## set up Google Place API 
+## lunch watson assistint tool 
+import json file "WatsonEats.json" to you workspaces
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
 
-
+## set up Google API 
+You onle need the API key For google place.
+* You can get google place and api key from here https://developers.google.com/places/ios-sdk/start
+by creating project in google and follow the instructions 
+* Plase the api key on Xcode "Keys.swift"  
 
 You can now run the application on a simulator or physical device
 
-
-The Watson Assistant service allows you to add a natural language interface to your application to automate interactions with your end users. This application shows how to incorporate Watson Assistant into an iOS application.
 
 ### License
 This package contains code licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the License in the LICENSE file within this package.
