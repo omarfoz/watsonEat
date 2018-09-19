@@ -126,10 +126,10 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
 
 https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
-* you only need one file from the starterkit called "BMSCredentials.plist"
+* You only need one file from the starterkit called "BMSCredentials.plist"
 then move this file inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
 
-* change the Bundle Identifier to anything 
+* Change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
 ## Launch Watson Assistint Tool 
 import json file "WatsonEats.json" to your workspaces , you can find the json file in the project WatsonEats/
