@@ -1,9 +1,29 @@
 ## WastonEats
 
+In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used to be a Chabot. The Google Places API will use to locate the nearby restaurant and coffee.
+
+
+When the reader has completed this experience, they will understand how to:
+*	Create a Chabot mobile app that can use to find the nearby restaurant and coffee.
+*	Use Google Place API to locate the nearby restaurant and coffee.
+
+
+
+
+## Flow
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/Picture1.png)
+* 1- The user opens the iOS application then click start chat
+* 2- User type “Restaurant or Coffee” via the mobile app.
+* 3- Watson Assistant identified the word then active the action method to find nearby.
+* 4- Google Places API search nearby restaurant or coffee.
+* 5- Return the nearby result.
+
+
 [![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
 [![Platform](https://img.shields.io/badge/platform-ios_swift-lightgrey.svg?style=flat)](https://developer.apple.com/swift/)
 
 ### Table of Contents
+
 * [Summary](#summary)
 * [Requirements](#requirements)
 * [Configuration](#configuration)
@@ -11,7 +31,7 @@
 * [License](#license)
 
 ### Summary
-WatsonEats is a Ios Mobile App that helps you to find the nearest restaurant or coffee
+Create a Mobile App that helps you to find the nearest restaurant and coffee with Watson Assistant and Google Places API:
 
 ### Requirements
 * iOS 9.0+
@@ -96,7 +116,22 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 
 > [View configuration](#configuration)
 
+
 ### Run
+## Clone this repo 
+Clone this repo called "VirtualAssistantforiOSSideProject"
+## create your own starterkit from IBM Coud on here 
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
+
+https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
+* you only need one file from the starterkit called "BMSCredentials.plist"
+then move this file to the "VirtualAssistantforiOSSideProject" folder inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
+* change the Bundle Identifier to anything 
+in the xcode in genral tap you can change it.
+## set up Google Place API 
+
+
+
 You can now run the application on a simulator or physical device
 
 
