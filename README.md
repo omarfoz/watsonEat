@@ -130,6 +130,7 @@ then move this file to the "VirtualAssistantforiOSSideProject" folder inside the
 in the xcode in genral tap you can change it.
 ## lunch watson assistint tool 
 import json file "WatsonEats.json" to you workspaces
+
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
 
 ## set up Google API 
@@ -138,6 +139,9 @@ You onle need the API key For google place.
 by creating project in google and follow the instructions 
 * Plase the api key on Xcode "Keys.swift"  
 
+![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/keys.gif)
+
+## Finally you can run the app
 You can now run the application on a simulator or physical device
 
 
