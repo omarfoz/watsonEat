@@ -140,7 +140,7 @@ import json file "WatsonEats.json" to your workspaces , you can find the json fi
 You only need the API key For google place.
 * You can get google place and api key from here https://developers.google.com/places/ios-sdk/start
 by creating project in google and follow the instructions 
-* Plase the api key on Xcode "Keys.swift"  
+* Place the api key on Xcode "Keys.swift"  
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/keys.gif)
 
