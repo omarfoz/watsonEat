@@ -1,4 +1,4 @@
-## Virtual Assistant for iOS with Watson
+## WastonEats
 
 [![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
 [![Platform](https://img.shields.io/badge/platform-ios_swift-lightgrey.svg?style=flat)](https://developer.apple.com/swift/)
@@ -11,7 +11,7 @@
 * [License](#license)
 
 ### Summary
-This IBM Cloud Starter Kit will showcase the Watson Assistant service and give you integration points for each of the IBM Cloud Mobile services.
+WatsonEats is a Ios Mobile App that helps you to find the nearest restaurant or coffee
 
 ### Requirements
 * iOS 9.0+
