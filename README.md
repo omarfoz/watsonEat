@@ -33,7 +33,7 @@ When the reader has completed this experience, they will understand how to:
 * [License](#license)
 
 ### Summary
-Create a Mobile App that helps you to find the nearest restaurant and coffee with Watson Assistant and Google Places API:
+a Mobile Application that helps you to find the nearest restaurant and coffee with Watson Assistant and Google Places API
 
 ### Requirements
 * iOS 9.0+
