@@ -120,7 +120,7 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 ### Run
 ## Clone this repo 
 Clone this repo called "VirtualAssistantforiOSSideProject"
-## create your own starterkit from IBM Cloud on here 
+## Create your own Starterkit from IBM Cloud on here 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
 
 https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
@@ -128,7 +128,7 @@ https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assi
 then move this file to the "VirtualAssistantforiOSSideProject" folder inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
 * change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
-## lunch watson assistint tool 
+## Launch Watson Assistint Tool 
 import json file "WatsonEats.json" to you workspaces
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
@@ -147,4 +147,4 @@ You can now run the application on a simulator or physical device
 
 ### License
 This package contains code licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the License in the LICENSE file within this package.
-# sideproject-watsonEat
+# WatsonEat
