@@ -120,8 +120,8 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 
 
 ### Run
-## Clone this repo 
-Clone this repo called "VirtualAssistantforiOSSideProject"
+### Clone this repo 
+
 ## Create your own Starterkit from IBM Cloud on here 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
 
