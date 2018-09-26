@@ -41,7 +41,7 @@ a Mobile Application that helps you to find the nearest restaurant and coffee wi
 * Swift 4.0
 
 ### Configuration
-* [IBM Cloud Mobile services Dependency Mangagement](#bluemix-mobile-services-dependency-management)
+* [IBM Cloud Mobile services Dependency Mangagement](#ibm-cloud-mobile-services-dependency-management)
 * [Watson Dependency Management](#watson-dependency-management)
 * [Watson Credential Mangement](#watson-credential-management)
 
