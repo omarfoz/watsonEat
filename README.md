@@ -120,10 +120,10 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 
 
 ### Run
-* Clone this repo
-* Create Starterkit from IBM Cloud
-* set up Google API
-* run the app
+* 1- After you done from the [Configuration](#configuration)
+* 2- [Create Starterkit from IBM Cloud](#create-your-own-starterkit-from-ibm-cloud-on-here)
+* 3- [Set up Goople API](#set-up-google-api)
+* 4- [Run the app](#finally-you-can-run-the-app)
 
 #### Create your own Starterkit from IBM Cloud on here 
 [Starterkit-Virtual Assistant for iOS with Watson](https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson)
@@ -136,12 +136,12 @@ then move this file inside the project folder watsonEats/VirtualAssistantforiOSS
 
 * Change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
-#### Launch Watson Assistint Tool 
+##### Launch Watson Assistint Tool 
 import json file "WatsonEats.json" to your workspaces, you can find the json file in the project WatsonEats/
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
 
-#### set up Google API 
+#### Set up Google API 
 You only need the API key For google place.
 * You can get google place api key from here https://developers.google.com/places/ios-sdk/start
 by creating project in google and follow the instructions 
