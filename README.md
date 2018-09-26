@@ -12,7 +12,7 @@ When the reader has completed this experience, they will understand how to:
 
 
 
-## Flow
+### Flow
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/Picture1.png)
 * 1- The user opens the iOS application then click start chat
 * 2- User type “Restaurant or Coffee” via the mobile app.
@@ -43,7 +43,7 @@ a Mobile Application that helps you to find the nearest restaurant and coffee wi
 ### Configuration
 * [IBM Cloud Mobile services Dependency Mangagement](#ibm-cloud-mobile-services-dependency-management)
 * [Watson Dependency Management](#watson-dependency-management)
-* [Watson Credential Mangement](#watson-credential-management)
+
 
 #### IBM Cloud Mobile services Dependency Management
 The IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies.
@@ -125,7 +125,7 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 * set up Google API
 * run the app
 
-## Create your own Starterkit from IBM Cloud on here 
+#### Create your own Starterkit from IBM Cloud on here 
 [Starterkit-Virtual Assistant for iOS with Watson](https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson)
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
@@ -136,12 +136,12 @@ then move this file inside the project folder watsonEats/VirtualAssistantforiOSS
 
 * Change the Bundle Identifier to anything 
 in the xcode in genral tap you can change it.
-## Launch Watson Assistint Tool 
+#### Launch Watson Assistint Tool 
 import json file "WatsonEats.json" to your workspaces , you can find the json file in the project WatsonEats/
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
 
-## set up Google API 
+#### set up Google API 
 You only need the API key For google place.
 * You can get google place api key from here https://developers.google.com/places/ios-sdk/start
 by creating project in google and follow the instructions 
@@ -149,10 +149,10 @@ by creating project in google and follow the instructions
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/keys.gif)
 
-## Finally you can run the app
+#### Finally you can run the app
 You can now run the application on a simulator or physical device
 
 
 ### License
 This package contains code licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the License in the LICENSE file within this package.
-# WatsonEat
+# WatsonEats
