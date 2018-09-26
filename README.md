@@ -125,7 +125,8 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 ## Create your own Starterkit from IBM Cloud on here 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
 
-https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson
+* [Starterkit-Virtual Assistant for iOS with Watson](https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson)
+
 * You only need one file from the starterkit called "BMSCredentials.plist"
 then move this file inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
 
