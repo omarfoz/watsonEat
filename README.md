@@ -2,22 +2,22 @@
 ### To watch the demo click on the image
 [![Watch the video](https://raw.githubusercontent.com/omarfoz/watsonEat/master/watsoneatsss.png)](https://youtu.be/gxFah_HV-l4)
 
-In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used to be a Chabot. The Google Places API will use to locate the nearby restaurant and coffee.
+In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used as a Chabot. The Google Places API will use to locate the nearby restaurants and coffee.
 
 
 When the reader has completed this experience, they will understand how to:
-*	Create a Chabot mobile app that can use to find the nearby restaurant and coffee.
-*	Use Google Place API to locate the nearby restaurant and coffee.
+*	Create a Chabot mobile app that can be used to find the nearby restaurants and coffee.
+*	Use Google Place API to locate the nearby restaurants and coffee.
 
 
 
 
 ### Flow
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/Picture1.png)
-* 1- The user opens the iOS application then click start chat
-* 2- User type “Restaurant or Coffee” via the mobile app.
-* 3- Watson Assistant identified the word then active the action method to find nearby.
-* 4- Google Places API search nearby restaurant or coffee.
+* 1- The user opens the iOS application then clicks start chat.
+* 2- User types “Restaurant or Coffee” via the mobile app.
+* 3- Watson Assistant identifies the word then activates the action method.
+* 4- Google Places API searches nearby restaurants or coffee.
 * 5- Return the nearby result.
 
 
@@ -33,7 +33,7 @@ When the reader has completed this experience, they will understand how to:
 * [License](#license)
 
 ### Summary
-a Mobile Application that helps you to find the nearest restaurant and coffee with Watson Assistant and Google Places API
+A Mobile Application that helps you find the nearest restaurants and coffee with Watson Assistant and Google Places API.
 
 ### Requirements
 * iOS 9.0+
@@ -120,37 +120,37 @@ Remember you need to Open the Watson Training user experience from the IBM Conso
 
 
 ### Run
-* 1- After you done from the [Configuration](#configuration)
-* 2- [Create Starterkit from IBM Cloud](#create-your-own-starterkit-from-ibm-cloud-on-here)
+* 1- After you're done from the [Configuration](#configuration)
+* 2- [Create Starterkit from IBM Cloud](#create-your-own-starterkit-from-ibm-cloud)
 * 3- [Set up Goople API](#set-up-google-api)
-* 4- [Run the app](#finally-you-can-run-the-app)
+* 4- [Run the app](#finally-run-the-app)
 
-#### Create your own Starterkit from IBM Cloud on here 
+#### Create your own Starterkit from IBM Cloud 
 [Starterkit-Virtual Assistant for iOS with Watson](https://console.bluemix.net/developer/appledevelopment/starter-kits/virtual-assistant-for-ios-with-watson)
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/watsonasstant.gif)
 
 
-* You only need one file from the starterkit called "BMSCredentials.plist"
+* You only need one file from the starterkit called "BMSCredentials.plist",
 then move this file inside the project folder watsonEats/VirtualAssistantforiOSSideProject.
 
-* Change the Bundle Identifier to anything 
-in the xcode in genral tap you can change it.
+* Change the *Bundle Identifier* to anything 
+in the xcode in *Genral* tab you can change it.
 ##### Launch Watson Assistint Tool 
-import json file "WatsonEats.json" to your workspaces, you can find the json file in the project WatsonEats/
+Import json file "WatsonEats.json" to your workspaces, you can find the json file in the project WatsonEats/
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/toolwatson.gif)
 
 #### Set up Google API 
-You only need the API key For google place.
-* You can get google place api key from here https://developers.google.com/places/ios-sdk/start
-by creating project in google and follow the instructions 
-* Place the api key on Xcode "Keys.swift"  
+You only need the API key for *Google Places*.
+* You can get *Google Places* API key from here https://developers.google.com/places/ios-sdk/start
+by creating project in google and following the instructions.
+* Place the API key on Xcode "Keys.swift"  
 
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/keys.gif)
 
-#### Finally you can run the app
-You can now run the application on a simulator or physical device
+#### Finally Run The App
+You can now run the application on a simulator or physical device.
 
 
 ### License
