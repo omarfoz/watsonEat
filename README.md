@@ -1,5 +1,5 @@
 ## WastonEats
-### To watch the demo click on the image
+### Click the image to watch the demo.
 [![Watch the video](https://raw.githubusercontent.com/omarfoz/watsonEat/master/watsoneatsss.png)](https://youtu.be/gxFah_HV-l4)
 
 In this developer experience, we will create an iOS mobile app using Swift, Watson Assistant and Google Places API. The Watson Assistant service will be used as a Chabot. The Google Places API will use to locate the nearby restaurants and coffee.
@@ -7,18 +7,23 @@ In this developer experience, we will create an iOS mobile app using Swift, Wats
 
 When the reader has completed this experience, they will understand how to:
 *	Create a Chabot mobile app that can be used to find the nearby restaurants and coffee.
-*	Use Google Place API to locate the nearby restaurants and coffee.
+*	Use Google Places API to locate the nearby restaurants and coffee.
 
 
 
 
 ### Flow
 ![alt text](https://raw.githubusercontent.com/omarfoz/sideproject-watsonEat/master/Picture1.png)
-* 1- The user opens the iOS application then clicks start chat.
-* 2- User types “Restaurant or Coffee” via the mobile app.
-* 3- Watson Assistant identifies the word then activates the action method.
-* 4- Google Places API searches nearby restaurants or coffee.
-* 5- Return the nearby result.
+
+1- The user opens the iOS application then clicks start chat.
+
+2- User types “Restaurant or Coffee” via the mobile app.
+
+3- Watson Assistant identifies the word then activates the action method.
+
+4- Google Places API searches nearby restaurants or coffee.
+
+5- Return the nearby results.
 
 
 [![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
